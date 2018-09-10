@@ -6,10 +6,14 @@ class Payments extends Component {
 	render() {
 		return (
 			<StripeCheckout
+				name="Maild"
+				description="$5 for 5 Maild Credits"
 				amount={500}
 				token={token => console.log(token)}
-				stripeKey={process.env.REACT_STRIPE_KEY}
-			/>
+				stripeKey={process.env.REACT_APP_STRIPE_KEY}
+			>
+				<button className="btn btn-primary">Add Credits</button>
+			</StripeCheckout>
 		);
 	}
 }
